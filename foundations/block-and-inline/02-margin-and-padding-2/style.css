@@ -1,27 +1,36 @@
+@use postcss-preset-env {
+  stage: 0
+}
+
 body {
-  background: #eee;
-  font-family: sans-serif;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
 }
 
-.card {
-  width: 400px;
-  background: #fff;
-  margin: 16px auto;
+form {
+  display: flex;
+  flex-wrap: wrap;
+  
+  & > input {
+    flex: 1 1 10ch;
+    margin: .5rem;
+    
+    &[type="email"] {
+      flex: 3 1 30ch;
+    }
+  }
 }
 
-.title {
-  background: #e3f4ff;
-}
-
-.content {
-  background: #e3f4ff;
-}
-
-.button-container {
-  background: #e3f4ff;
-}
-
-button {
-  background: white;
-  border: 1px solid #eee;
+input {
+  border: none;
+  background: hsl(0 0% 93%);
+  border-radius: .25rem;
+  padding: .75rem 1rem;
+  
+  &[type="submit"] {
+    background: hotpink;
+    color: white;
+    box-shadow: 0 .75rem .5rem -.5rem hsl(0 50% 80%);
+  }
 }
